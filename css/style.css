@@ -1,2 +1,288 @@
-@import url("../aerojet-aviation-static/css/style.css");
+/* Variáveis de Cores - Paleta Aviação Executiva */
+:root {
+    --primary: #0a192f; /* Azul Marinho Profundo */
+    --secondary: #c0c0c0; /* Prata Metálico */
+    --accent: #64ffda; /* Toque de Verde Água Tecnológico */
+    --text: #8892b0;
+    --white: #e6f1ff;
+    --bg-navy: #112240;
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--primary);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.text-white { color: var(--white); }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul { list-style: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section { padding: 100px 0; }
+.bg-navy { background-color: var(--bg-navy); }
+.text-center { text-align: center; }
+.mb-50 { margin-bottom: 50px; }
+
+.subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent);
+    padding: 18px 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn-full { width: 100%; background-color: var(--accent); color: var(--primary); }
+.btn-full:hover { background-color: rgba(100, 255, 218, 0.8); color: var(--primary); }
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px 0;
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background-color: rgba(10, 25, 47, 0.95);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links { display: flex; }
+.nav-links li { margin-left: 40px; }
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content { width: 100%; }
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 45px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text);
+}
+
+/* Grids */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Jet Cards */
+.jet-card {
+    background: var(--bg-navy);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.jet-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.jet-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.jet-info { padding: 30px; }
+.jet-info h3 { margin-bottom: 10px; font-size: 1.4rem; }
+.jet-info p { font-size: 0.9rem; color: var(--text); }
+
+/* Jet List */
+.jet-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.jet-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Formulário */
+.jet-form input, 
+.jet-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--white);
+    font-family: inherit;
+    outline: none;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.jet-form input:focus { background: rgba(100, 255, 218, 0.05); }
+
+/* Footer */
+footer {
+    background: #020c1b;
+    color: var(--text);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bg-navy);
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-links a { margin-left: 30px; font-size: 0.85rem; }
+
+.copyright { font-size: 0.8rem; }
+
+/* Mobile Menu Icon */
+.mobile-menu-icon { display: none; cursor: pointer; }
+.mobile-menu-icon div {
+    width: 25px;
+    height: 2px;
+    background-color: var(--accent);
+    margin: 7px;
+    transition: var(--transition);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 2.8rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 50px; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+    }
+
+    .nav-links li { margin: 20px 0; }
+    .mobile-menu-icon { display: block; }
+    .nav-active { transform: translateX(0); }
+    .footer-grid { flex-direction: column; text-align: center; }
+    .footer-links { margin-top: 30px; }
+}
