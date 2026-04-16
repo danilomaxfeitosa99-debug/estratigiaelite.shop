@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miért lepődtek meg a budapesti orvosok? — A méz és az agy kapcsolata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#111;color:#e8e8e8;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* === DARK HERO — full bleed === */
+.hero{position:relative;width:100%;min-height:380px;overflow:hidden;display:flex;align-items:flex-end}
+.hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;cursor:pointer}
+.hero-overlay{position:relative;z-index:2;width:100%;padding:30px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.85) 40%)}
+.hero-cat{display:inline-block;background:#d4a030;color:#111;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:2px;margin-bottom:8px}
+.hero h1{font-family:'Playfair Display',serif;font-size:26px;line-height:1.25;color:#fff;font-weight:800;max-width:600px}
+.hero h1 span{color:#d4a030}
+
+/* === CONTAINER === */
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+
+/* === CTA PRINCIPAL — impossível ignorar === */
+.cta-top{margin:16px auto;max-width:640px;padding:0 20px}
+.cta-box{background:linear-gradient(135deg,#d4a030,#b8861a);border-radius:8px;padding:18px 22px;text-align:center;box-shadow:0 6px 30px rgba(212,160,48,.3)}
+.cta-box h2{font-family:'Playfair Display',serif;font-size:18px;color:#111;font-weight:800;margin-bottom:4px;line-height:1.3}
+.cta-box p{font-size:12px;color:rgba(17,17,17,.65);margin-bottom:12px;font-weight:400}
+.btn-main{display:inline-block;background:#111;color:#d4a030;padding:14px 40px;font-size:14px;font-weight:600;letter-spacing:.5px;text-decoration:none;border-radius:6px;transition:all .25s;box-shadow:0 4px 15px rgba(0,0,0,.3)}
+.btn-main:hover{background:#fff;color:#111;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.cta-box small{display:block;margin-top:6px;font-size:8px;color:rgba(17,17,17,.4)}
+
+/* === CURIOSITY HOOK — pergunta grande === */
+.hook{padding:20px 0 4px;text-align:center}
+.hook h2{font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;line-height:1.35;max-width:540px;margin:0 auto}
+.hook h2 span{color:#d4a030}
+.hook-sub{font-size:12px;color:#888;margin-top:4px;font-weight:300}
+
+/* === BODY TEXT === */
+.body{padding:14px 0}
+.body p{font-size:14px;color:#ccc;font-weight:300;line-height:1.8;margin-bottom:12px}
+.body strong{color:#fff;font-weight:500}
+.body em{color:#d4a030;font-style:normal;font-weight:500}
+
+/* === HIGHLIGHT BOX — dark card === */
+.highlight{margin:14px 0;padding:14px 18px;background:#1a1a1a;border-left:4px solid #d4a030;border-radius:0 6px 6px 0}
+.highlight p{font-family:'Playfair Display',serif;font-size:15px;color:#fff;font-style:italic;line-height:1.55;margin:0}
+
+/* === IMAGE CARD with text overlay === */
+.img-card{position:relative;margin:16px 0;border-radius:8px;overflow:hidden}
+.img-card img{width:100%;cursor:pointer;transition:transform .3s}.img-card img:hover{transform:scale(1.02)}
+.img-card-overlay{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.img-card-overlay p{font-size:12px;color:#ddd;font-weight:300;line-height:1.5}
+.img-card-overlay strong{color:#d4a030}
+
+/* === CURIOSITY LIST === */
+.cur-list{margin:14px 0;padding:0}
+.cur-item{padding:10px 14px;border-bottom:1px solid #222;display:flex;align-items:flex-start;gap:10px}
+.cur-item:last-child{border-bottom:none}
+.cur-num{flex-shrink:0;width:28px;height:28px;background:#d4a030;color:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.cur-text{font-size:13px;color:#ccc;font-weight:300;line-height:1.55}
+.cur-text strong{color:#fff;font-weight:500}
+
+/* === CTA BOTTOM === */
+.cta-bot{margin:16px 0;padding:18px 22px;background:#1a1a1a;border-radius:8px;text-align:center;border:1px solid #333}
+.cta-bot h3{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:2px;font-weight:700}
+.cta-bot p{font-size:11px;color:#888;margin-bottom:10px;font-weight:300}
+.cta-bot .btn-main{background:#d4a030;color:#111}
+.cta-bot .btn-main:hover{background:#fff}
+.cta-bot small{display:block;margin-top:5px;font-size:7.5px;color:#555}
+
+/* === DISCLAIMER === */
+.disc{font-size:8px;color:#666;margin:14px 0;padding:10px 12px;background:#1a1a1a;border-radius:4px;line-height:1.6;border:1px solid #222}
+
+/* === FOOTER === */
+footer{max-width:640px;margin:0 auto;padding:16px 20px 30px;text-align:center;font-size:8px;color:#555}
+footer a{color:#d4a030;text-decoration:none}footer a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+.hero h1{font-size:21px}
+.hook h2{font-size:17px}
+.cta-box h2{font-size:15px}
+.hero{min-height:300px}
+}
+</style>
+</head>
+<body>
+
+<!-- DARK HERO — full bleed image with title overlay -->
+<section class="hero">
+<a href="https://lp.estratigiaelite.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem12v2-honey-brain-dramatic-32muegHSsQUgrRR3HYMdyM.webp" alt="Méz és az agy kapcsolata"></a>
+<div class="hero-overlay">
+<span class="hero-cat">Megdöbbentő felfedezés</span>
+<h1>Miért lepődtek meg a budapesti orvosok, amikor <span>ezt a mézes keveréket</span> megvizsgálták?</h1>
+</div>
+</section>
+
+<!-- CTA PRINCIPAL — grande, dourado, impossível ignorar -->
+<div class="cta-top">
+<div class="cta-box">
+<h2>&#9654; A válasz ebben a videóban van</h2>
+<p>Tudja meg, mit fedeztek fel a méz és az emlékezet kapcsolatáról</p>
+<a href="https://lp.estratigiaelite.shop/preclick" class="btn-main">Videó megtekintése most &rarr;</a>
+<small>Ingyenes tájékoztató tartalom · 3 perc</small>
+</div>
+</div>
+
+<div class="wrap">
+
+<!-- CURIOSITY HOOK — pergunta que abre loop -->
+<div class="hook">
+<h2>Mi történik az <span>agyban</span>, amikor reggel éhgyomorra <span>mézet</span> eszik?</h2>
+<p class="hook-sub">A válasz meglepte még az orvosokat is.</p>
+</div>
+
+<!-- BODY TEXT — copy curiosa com loops -->
+<div class="body">
+<p>A legtöbb ember azt hiszi, hogy az emlékezet romlása az öregedés természetes része. <strong>De mi van, ha nem ez az igazság?</strong></p>
+
+<p>Egy <strong>budapesti orvos</strong> nemrég egy különös mintát fedezett fel a pácienseinél. Azok, akik egy bizonyos <em>mézes keveréket</em> fogyasztottak reggel — <strong>meglepő változásokról számoltak be.</strong></p>
+
+<p>A kérdés az volt: <strong>miért pont a méz?</strong> És miért pont <em>ebben a kombinációban?</em></p>
+</div>
+
+<!-- HIGHLIGHT BOX -->
+<div class="highlight">
+<p>„Nem a méz önmagában a titok — hanem az, ami történik, amikor ezzel a négy összetevővel együtt fogyasztják. Ez az, amit a legtöbb ember nem tud."</p>
+</div>
+
+<!-- IMAGE CARD -->
+<div class="img-card">
+<a href="https://lp.estratigiaelite.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem12v2-surprised-elderly-man-iEUyo3FSbER2rXXpgpZTqt.webp" alt="Meglepett idős férfi Budapest"></a>
+<div class="img-card-overlay">
+<p><strong>Szabó István, 71 éves, Budapest:</strong> „Amikor az orvos elmondta, hogy a méz <strong>hogyan hat az agyra</strong> — nem akartam elhinni. De azóta minden reggel ezzel kezdem."</p>
+</div>
+</div>
+
+<!-- CURIOSITY LIST — "amit megtudhat" -->
+<div class="cur-list">
+<div class="cur-item">
+<div class="cur-num">1</div>
+<div class="cur-text"><strong>A „rejtett összetevő"</strong> a mézben, amelyről a legtöbb ember nem tud — és ami közvetlenül hat az agyi sejtekre</div>
+</div>
+<div class="cur-item">
+<div class="cur-num">2</div>
+<div class="cur-text">Miért mondják a <strong>Semmelweis Egyetem</strong> közelében dolgozó orvosok, hogy <strong>„ez nem véletlen"?</strong></div>
+</div>
+<div class="cur-item">
+<div class="cur-num">3</div>
+<div class="cur-text">A <strong>4 összetevő</strong> pontos aránya — és miért nem működik, ha <strong>rossz sorrendben</strong> keveri össze</div>
+</div>
+<div class="cur-item">
+<div class="cur-num">4</div>
+<div class="cur-text">Miért éppen <strong>reggel, éhgyomorra</strong> kell bevenni — és mi történik, ha este veszi be</div>
+</div>
+</div>
+
+<!-- BODY TEXT — mais curiosidade -->
+<div class="body">
+<p>A <strong>Hortobágy</strong> és a <strong>Bükk-hegység</strong> környéki méhészek már évtizedek óta ismerik ezt a keveréket. De most, hogy a <strong>budapesti orvosok</strong> is felfigyeltek rá — <em>egyre többen akarják tudni a pontos receptet.</em></p>
+
+<p><strong>A teljes recept — lépésről lépésre — ebben a videóban van:</strong></p>
+</div>
+
+<!-- CTA BOTTOM -->
+<div class="cta-bot">
+<h3>Nézze meg, mit fedeztek fel a méz és az emlékezet kapcsolatáról</h3>
+<p>A pontos recept · A 4 összetevő · A helyes sorrend</p>
+<a href="https://lp.estratigiaelite.shop/preclick" class="btn-main">Videó megtekintése &rarr;</a>
+<small>Ingyenes tájékoztató tartalom</small>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+<strong>Jogi nyilatkozat:</strong> Ez a cikk kizárólag tájékoztató jellegű, és nem minősül orvosi tanácsadásnak. Az étrend-kiegészítők nem helyettesítik a változatos étrendet és az egészséges életmódot. Az eredmények egyénenként eltérőek lehetnek. Mielőtt bármilyen változtatást eszközölne étrendjében, konzultáljon egészségügyi szakemberrel. A cikkben szereplő vélemények az olvasók személyes tapasztalatait tükrözik.
+</div>
+
+</div>
+
+<footer>
+<p><a href="privacy.html">Adatvédelem</a> &middot; <a href="terms.html">Felhasználási feltételek</a></p>
+<p style="margin-top:3px">© 2026 &middot; CNPJ: 60.862.894/0001-50</p>
+</footer>
+
+<script>
+(function(){var q=window.location.search;if(!q)return;document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||h.startsWith('#')||h.startsWith('mailto:'))return;a.setAttribute('href',h.includes('?')?h+'&'+q.substring(1):h+q)})})();
+</script>
+<script type="text/javascript" src="https://lp.estratigiaelite.shop/pretrack.js?rtkcmpid=69e170f960c38fe7a07c5dcb"></script>
+</body>
+</html>
